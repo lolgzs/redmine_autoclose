@@ -1,5 +1,14 @@
 require 'redmine'
-require "#{File.dirname(__FILE__)}/lib/redmine_autoclose"
+require 'json'
+
+Rails.application.config.after_initialize do
+  require_relative 'lib/redmine_autoclose/config'
+  require_relative 'lib/redmine_autoclose/patches/issue_patch'
+  require_relative 'lib/redmine_autoclose/hooks'
+  require_relative 'lib/redmine_autoclose/patches/controllers/issues_controller_patch.rb'
+  require_relative 'app/models/autoclose_issue'
+end
+
 
 Redmine::Plugin.register :redmine_autoclose do
   name 'Redmine Autoclose plugin'

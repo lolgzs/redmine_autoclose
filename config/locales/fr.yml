@@ -29,3 +29,4 @@ fr:
     trackers:
       label: 'Traceurs pris en charge'
       description: 'Seuls les traceurs sélectionnés sont pris en compte. Si vide, tous les traceurs sont utilisés.'
+  field_autoclose: 'Fermeture automatique'

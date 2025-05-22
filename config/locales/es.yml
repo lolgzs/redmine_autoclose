@@ -29,3 +29,4 @@ es:
     trackers:
       label: 'Rastreadores soportados'
       description: 'Solo se consideran los rastreadores seleccionados. Si está vacío, se usarán todos los rastreadores.'
+  field_autoclose: 'Cierre automático'

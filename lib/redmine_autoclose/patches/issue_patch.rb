@@ -1,0 +1,21 @@
+module RedmineAutoclose
+  module Patches
+    module IssuePatch
+      def self.included(base)
+        base.class_eval do
+          has_one :autoclose_issue, dependent: :destroy
+
+          accepts_nested_attributes_for :autoclose_issue, allow_destroy: true, update_only: true
+        end
+      end
+
+
+      def autoclose
+        autoclose_issue&.autoclose || false
+      end
+    end
+  end
+end
+
+
+Issue.send(:include, RedmineAutoclose::Patches::IssuePatch)

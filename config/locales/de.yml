@@ -29,3 +29,4 @@ de:
     trackers:
       label: 'Unterstützte Tracker'
       description: 'Nur ausgewählte Tracker werden berücksichtigt. Wenn leer, werden alle Tracker verwendet.'
+  field_autoclose: 'Automatische Schließung'
