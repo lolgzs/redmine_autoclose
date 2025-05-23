@@ -1,6 +1,10 @@
 module RedmineAutoclose
   class Autoclose
     def self.when_issue_resolved(issue, status_ids)
+      if !issue.autoclose
+        return nil
+      end
+      
       issue.journals.reverse_each do |j|
         status_change = j.new_value_for('status_id')
         return j.created_on if status_change && status_ids.include?(status_change.to_i)
