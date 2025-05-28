@@ -9,7 +9,7 @@ module RedmineAutoclose
         end
 
         private
-
+        
         def handle_autoclose
           return unless params[:issue] && params[:issue][:autoclose].present?
 

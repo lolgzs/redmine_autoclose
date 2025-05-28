@@ -13,6 +13,12 @@ module RedmineAutoclose
       def autoclose
         autoclose_issue&.autoclose || false
       end
+
+      
+      def autoclose_enabled
+        settings = Setting.plugin_redmine_autoclose
+        settings[:autoclose_tracker_ids].include?(self.tracker_id.to_s)          
+      end
     end
   end
 end

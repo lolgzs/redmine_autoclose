@@ -1,3 +1,6 @@
+<% if @issue.autoclose_enabled %>
 <p>
-  <%= form.check_box :autoclose, :no_label => true %> <label for="issue_autoclose"><%= l(:field_autoclose) %></label>
+  <%= form.check_box :autoclose, :no_label => true %>
+  <%= label_tag 'issue_autoclose', l(:field_autoclose) %>
 </p>
+<% end %>
