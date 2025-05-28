@@ -1,0 +1,7 @@
+users_001:
+  login: "user1"
+  firstname: "User"
+  lastname: "One"
+  mail: "user1@example.com"
+  admin: false
+  status: 1

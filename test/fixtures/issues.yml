@@ -1,0 +1,7 @@
+issues_001:
+  subject: "Test Issue"
+  project_id: 1
+  author_id: 1
+  status_id: 1
+  created_on: <%= 3.days.ago.to_fs(:db) %>
+
