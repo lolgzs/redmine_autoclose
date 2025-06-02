@@ -58,4 +58,13 @@ class IssuesControllerTest < ActionController::TestCase
     assert_select 'input[name=?][checked=checked]', 'issue[autoclose]'
   end
 
+
+  test "GET #new with empty settings should not display autoclose checkbox" do
+    Setting.plugin_redmine_autoclose = {}
+    @request.session[:user_id] = 1
+    get :new
+    assert_response :success
+    assert_select 'input[name=?]', 'issue[autoclose]', false
+  end
+
 end
